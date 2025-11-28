@@ -1,0 +1,4 @@
+cohere
+jupyterlab
+python-dotenv
+ipywidgets
