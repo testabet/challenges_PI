@@ -18,7 +18,7 @@ found_docs= []
 class MyEmbeddingFunction(EmbeddingFunction):
     def __call__(self, input: Documents) -> Embeddings:
         # Llama a la función de Cohere para obtener las embeddings
-        return get_embeddings(input)  # input es una lista de textos
+        return get_embeddings(input) 
 
 
 # Configuracion de Logging
@@ -128,7 +128,7 @@ def search_docs(query:str):
     try:
         results = collection.query(
                 query_embeddings=query_emb,
-                n_results=3, # cantidad de resultados seleccionada tras ir realizando pruebas con diferentes valores 
+                n_results=3,
                 include=["documents", "metadatas", "distances"]
                 )
         logger.info(f"Consulta generada")
@@ -157,9 +157,9 @@ def search_docs(query:str):
             item = ItemsResponse(
                         document_id=parent_id,
                         title=title,
-                        content_snippet=doc, # El chunk de texto encontrado
+                        content_snippet=doc, 
                         id_embedding=id_,
-                        similarity_score=score, # Convertir distancia a score 
+                        similarity_score=score, 
                         grounded= is_grounded)
                     
             found_docs.append(item)
@@ -212,7 +212,4 @@ def aks_llm(question:str):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000,reload=True) # esto se usa en desarrollo
-                            # 0.0.0.0 para levantar un serivdos y si no funciona cambiarlo a 127.0.0.1
-    # la otra forma le damos el comando directo cuando lo usamos para produccion,
-    #  para eso se debe actiavr el entorno y se lo damos desde el comando
+    uvicorn.run("main:app", host="0.0.0.0", port=8000,reload=True)
