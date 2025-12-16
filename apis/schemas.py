@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 class ItemsResponse(BaseModel):
     document_id:str
     title: str
+    id_embedding:str
     content_snippet:str
     similarity_score: float
     grounded: bool
@@ -21,13 +22,11 @@ class UploadResponse(BaseModel):
 
 class EmbeddingsResponse(BaseModel):
     message: str
+    document_id:str
 
 class SearchResponse(BaseModel):
     results: List[ItemsResponse]
-
-class AskRequest(BaseModel):
-    session_id: str 
-    question: str    
+ 
 
 class AskResponse(BaseModel):
     question:str
