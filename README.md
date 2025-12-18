@@ -15,7 +15,7 @@ Este proyecto es un asistente inteligente diseñado para responder preguntas sob
 ## Instalación y Uso
 
 ### 1. Clonar el repositorio
-git clone [https://github.com/TU_USUARIO/TU_REPO.git](https://github.com/TU_USUARIO/TU_REPO.git)
+git clone
 cd TU_REPO
 
 ### 2. Configura la variable de entorno
